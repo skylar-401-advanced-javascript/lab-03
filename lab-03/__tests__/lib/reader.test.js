@@ -35,6 +35,11 @@ describe('File Reader Module', () => {
       expect(err).toBeNull();
       expect(data instanceof Array ).toBeTruthy();
       expect(data.length ).toBe(3);
+      expect(data).toEqual([
+        'file1.txt contents',
+        'file2.txt contents',
+        'file3.txt contents',
+      ])
       done();
     });
   });

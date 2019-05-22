@@ -8,7 +8,7 @@ exports.readFile = (file, cb) => {
   }
   else {
     setTimeout(() => {
-      cb(undefined, new Buffer('File Contents'));
+      cb(undefined, new Buffer(`${file} contents`));
     }, Math.floor(Math.random() * 50));
   }
 };
