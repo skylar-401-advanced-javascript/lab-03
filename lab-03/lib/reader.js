@@ -39,24 +39,25 @@ const readAll = (paths, callback) => {
       console.log('Read File 1');
       contents.push(data.toString().trim());
       readOne(paths[1], (err, data) => {
-    if (err) {
-      callback(err);
-    }
-    else {
-      console.log('Read File 2');
-      contents.push(data.toString().trim());
-      readOne(paths[2], (err, data) => {
-    if (err) {
-      callback(err);
-    }
-    else {
-      console.log('Read File 3');
-      contents.push(data.toString().trim());
-      callback(null, contents);
-    }
-  });
-    }
-  });
+        if (err) {
+          callback(err);
+        }
+        else {
+          console.log('Read File 2');
+          contents.push(data.toString().trim());
+          readOne(paths[2], (err, data) => {
+            if (err) {
+              callback(err);
+            }
+            else {
+              console.log('Read File 3');
+              contents.push(data.toString().trim());
+              
+              callback(null, contents);
+            }
+          });
+        }
+      });
     }
   });
 
