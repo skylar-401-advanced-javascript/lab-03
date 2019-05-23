@@ -7,11 +7,12 @@ module.exports = function(fileToRead, fileToWrite, callback) {
     if(err) {
       callback(err);
     } else {
-      fs.writeFile(fileToWrite, data, (err) => {
+      let randomNumber = Math.ceil(Math.random()*10);
+      fs.writeFile(fileToWrite, randomNumber, (err) => {
         if(err) {
           return callback(err);
         }
-        callback(null, data);
+        callback(null, data.toString());
       });
     }
   });
