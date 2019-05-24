@@ -7,7 +7,7 @@ const fs = require('fs');
 let filesToRead = `${__dirname}/../files/2.txt`;
 let fileToWrite = `${__dirname}/../files/2.txt`;
 
-describe('Copy file module', () => {
+describe('Edit file module', () => {
   it('calls callback with error for missing readFile', done => {
     let result = editFile('missingFile', 'fileToWrite', (err) => {
       expect(err).toBeDefined();
