@@ -4,7 +4,7 @@ jest.mock('fs');
 
 const reader = require('../../lib/reader-promise');
 
-describe('File Reader Module', () => {
+describe('File reader module with promises', () => {
 
   it('when given other than three files, returns an error', () => {
     let files = ['bad.txt'];
